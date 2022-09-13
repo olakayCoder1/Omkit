@@ -49,13 +49,13 @@ function Intro() {
   },[])
 
   return (
-    <div className=' w-full md:h-4/6 flex flex-col md:flex-row gap-3 items-center'>
+    <div className=' w-full md:h-4/6 flex flex-col md:flex-row gap-3 items-center pb-12'>
         <div className='w-4/6 flex flex-col gap-3 py-2 md:p-6 '>
             <h2 className=' text-5xl  font-headingFont text-black'>HOUSEHOLD, KITCHEN & SOUVENIRS</h2>
             <p className=' font-medium text-base'>Your No1 homeware store where you can get luxury home interior at affordable prices</p>
             <p className=' p-2 px-6 bg-omkitBg w-fit text-white cursor-pointer '>Explore</p>
         </div>
-        <div className="h-[350px] md:w-2/6 max-h-[400px]  md:h-full bg-white"  >
+        <div className="h-[350px] w-[350px] md:w-2/6 max-h-[400px]"  >
           <div id='slideIntro' className='w-full h-full bg-center bg-cover bg-no-repeat rounded-2xl' style={{ backgroundImage : `url(${logo3})`}}> 
             {/* <img src={logo1} className='w-full h-full  rounded-2xl' />  */}
           </div>

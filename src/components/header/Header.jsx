@@ -10,6 +10,8 @@ import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
 import {BsCartDashFill} from 'react-icons/bs'
 import {BiUser} from 'react-icons/bi'
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const Header = () => {
 
@@ -46,7 +48,7 @@ const Header = () => {
               Home
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              Menu
+              Products
             </li>
             <li className="hidden lg:block text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               About Us

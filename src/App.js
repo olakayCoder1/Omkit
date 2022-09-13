@@ -7,8 +7,22 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import hero from './assets/heroBg.png'
 import Footer from "./components/Footer";
+import AllProducts from "./pages/AllProducts";
+import Carts from "./components/carts/Carts";
+import { useStateValue } from "./context/StateProvider";
+import { actionType } from "./context/reducer";
+import { useSelector , useDispatch } from 'react-redux'
+import { cartReducer } from './contexts/reducers/cartReducer.jsx'
 
 function App() {
+
+  const dispatch = useDispatch()
+  const user = useSelector( state => state.user )
+
+  useEffect(()=>{
+    dispatch(fetchUsers())
+  },[])
+    console.log(user)
   return (
     <AnimatePresence exitBeforeEnter>
       <Router>
@@ -19,8 +33,10 @@ function App() {
       <main className="mt-14 md:mt-20 px-3 md:px-16 py-4 w-full">
         <Routes>
           <Route path="" element={<HomePage />} />
+          <Route path="/the" element={<AllProducts />} />
         </Routes>
       </main>
+      {/* <Carts /> */}
       <Footer />
       </div>
       </Router>
