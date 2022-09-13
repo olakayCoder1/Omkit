@@ -8,7 +8,8 @@ import {motion} from 'framer-motion'
 import TopRanking from '../components/home/TopRanking'
 import Footer from '../components/Footer'
 import HeaderSlider from '../components/home/HeaderSlider'
-import ProductCard from '../components/products/ProductCard.jsx'
+
+
 
 function Method({title,Icon ,description}){
     return (

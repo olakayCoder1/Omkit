@@ -9,20 +9,12 @@ import hero from './assets/heroBg.png'
 import Footer from "./components/Footer";
 import AllProducts from "./pages/AllProducts";
 import Carts from "./components/carts/Carts";
-import { useStateValue } from "./context/StateProvider";
-import { actionType } from "./context/reducer";
-import { useSelector , useDispatch } from 'react-redux'
-import { cartReducer } from './contexts/reducers/cartReducer.jsx'
+
 
 function App() {
 
-  const dispatch = useDispatch()
-  const user = useSelector( state => state.user )
+  
 
-  useEffect(()=>{
-    dispatch(fetchUsers())
-  },[])
-    console.log(user)
   return (
     <AnimatePresence exitBeforeEnter>
       <Router>

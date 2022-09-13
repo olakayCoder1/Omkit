@@ -1,7 +1,8 @@
 import React from 'react'
 import TopProduct from './TopProduct'
 import image4 from '../../assets/image4.jpeg'
-
+import {TbCurrencyNaira} from 'react-icons/tb'
+import ProductCard from './ProductCard'
 
 
 const productSlides = [
@@ -27,6 +28,8 @@ const productSlides = [
 
 
 
+
+
 function TopRanking() {
   return (
     <div className=' w-full h-full bg-white my-12 rounded-lg px-2 md:px-6 lg:p-12'>
@@ -34,6 +37,22 @@ function TopRanking() {
             <h2 className='w-fit text-center text-xl font-bold font-headingFont  hover:underline hover:underline-offset-1 hover:text-omkit'>Featured collection</h2>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 '>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            {/* <TopProduct />
             <TopProduct />
             <TopProduct />
             <TopProduct />
@@ -42,8 +61,7 @@ function TopRanking() {
             <TopProduct />
             <TopProduct />
             <TopProduct />
-            <TopProduct />
-            <TopProduct />
+            <TopProduct /> */}
         </div>
     </div>
   )
