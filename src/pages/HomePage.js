@@ -27,8 +27,7 @@ function Method({title,Icon ,description}){
 function HomePage() {
   return (
     <div className='w-full ' >
-      {/* <Intro /> */}
-      
+      <Intro />
       <div className='w-full p-2 lg-p-4 :bg-white grid grid-cols-1 md:grid md:grid-cols-2 lg:flex rounded-lg'>
         <Method title='Great value items' description="There 's always something on sale!" Icon={GrValidate}/>
         <Method title='Worry-free shopping' description="Every order has Buyer Protection coverage" Icon={MdAttachMoney}/>

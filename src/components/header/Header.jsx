@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../../context/StateProvider";
 import { actionType } from "../../context/reducer";
 import {BsCartDashFill} from 'react-icons/bs'
+import {GiHamburgerMenu} from 'react-icons/gi'
 import {BiUser} from 'react-icons/bi'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -34,7 +35,7 @@ const Header = ({ toggleCart , setToggleCart }) => {
 
         <form className=" w-[300px] lg:w-[400px] ">
           <input  type='text' 
-          class=' w-full text-sm font-medium  text-gray-500 ring-0 border border-gray-300 focus:ring-0 focus:border-[1px] focus:border-gray-300 placeholder:text-gray-500 rounded-lg'
+          className=' w-full text-sm font-medium  text-gray-500 ring-0 border border-gray-300 focus:ring-0 focus:border-[1px] focus:border-gray-300 placeholder:text-gray-500 rounded-lg'
           placeholder="Search products, brands , categories"
           />
         </form>
@@ -147,13 +148,18 @@ const Header = ({ toggleCart , setToggleCart }) => {
         </Link>
 
         <div className="relative">
-          <motion.img
+          {/* <motion.img
             whileTap={{ scale: 0.6 }}
             src={userlogo}
             className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
             alt="userprofile"
             onClick={()=> setIsMenu(!isMenu)}
-          />
+          /> */}
+          <motion.p whileTap={{ scale: 0.6 }}  onClick={()=> setIsMenu(!isMenu)}
+            className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full">
+              <GiHamburgerMenu  className=" w-[90%] h-[90%]"/>
+          </motion.p>
+          
           {isMenu && (
               <motion.div
               initial={{ opacity: 0, scale: 0.6 }}

@@ -43,7 +43,7 @@ function Intro() {
         current = productSlides[current].id
         slides.style.backgroundImage = `url(${productSlides[current - 1].image}`
       }
-    },2000)
+    },3000)
 
     // return () => clearInterval(current)
   },[])
