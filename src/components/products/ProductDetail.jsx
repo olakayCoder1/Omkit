@@ -64,14 +64,16 @@ function ProductDetail() {
             </div>
                 
             <div className=' grid grid-cols-2 gap-2 items-center text-lg font-medium px-6'>
-                <p className=' flex place-content-center gap-4  items-center bg-green-500 text-white cursor-pointer p-3 px-6 rounded-lg'>
+                <motion.p whileTap={{ scale: 0.75 }}
+                    className=' flex place-content-center gap-4  items-center bg-green-500 text-white cursor-pointer p-3 px-6 rounded-lg'>
                     <MdShoppingBasket />
                     <span className='hidden lg:flex items-center place-content-center'>Add to cart</span>
-                </p>
-                <p className=' flex place-content-center  items-center gap-4 bg-gray-300 cursor-pointer p-3 px-6 rounded-lg'>
+                </motion.p>
+                <motion.p whileTap={{ scale: 0.75 }} 
+                     className=' flex place-content-center  items-center gap-4 bg-gray-300 cursor-pointer p-3 px-6 rounded-lg'>
                     <BsHeartFill />
                     <span className='hidden lg:flex items-center place-content-center'>Save for later</span>
-                </p>
+                </motion.p>
             </div>
 
         </div>

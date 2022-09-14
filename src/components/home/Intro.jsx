@@ -45,7 +45,7 @@ function Intro() {
       }
     },3000)
 
-    // return () => clearInterval(current)
+    return () => clearInterval(current)
   },[])
 
   return (
