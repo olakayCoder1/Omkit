@@ -31,26 +31,26 @@ const productSlides = [
 
 function Intro() {
 
-  useEffect(()=>{
+  // useEffect(()=>{
 
-    let current = 0 ;
-    setInterval(()=>{
-      let slides = document.getElementById('slideIntro')
-      if(current === 4 ){
-        current = 1
-        slides.style.backgroundImage = `url(${productSlides[current - 1 ].image}`
-      }else{
-        current = productSlides[current].id
-        slides.style.backgroundImage = `url(${productSlides[current - 1].image}`
-      }
-    },3000)
+  //   let current = 0 ;
+  //   setInterval(()=>{
+  //     let slides = document.getElementById('slideIntro')
+  //     if(current === 4 ){
+  //       current = 1
+  //       slides.style.backgroundImage = `url(${productSlides[current - 1 ].image}`
+  //     }else{
+  //       current = productSlides[current].id
+  //       slides.style.backgroundImage = `url(${productSlides[current - 1].image}`
+  //     }
+  //   },3000)
 
-    return () => clearInterval(current)
-  },[])
+  //   return () => clearInterval(current)
+  // },[])
 
   return (
     <div className=' w-full md:h-4/6 flex flex-col md:flex-row gap-3 items-center pb-12'>
-        <div className='w-4/6 flex flex-col gap-3 py-2 md:p-6 '>
+        <div className='md:w-4/6 flex flex-col gap-3 py-2 md:p-6 '>
             <h2 className=' text-5xl  font-headingFont text-black'>HOUSEHOLD, KITCHEN & SOUVENIRS</h2>
             <p className=' font-medium text-base'>Your No1 homeware store where you can get luxury home interior at affordable prices</p>
             <p className=' p-2 px-6 bg-omkitBg w-fit text-white cursor-pointer '>Explore</p>

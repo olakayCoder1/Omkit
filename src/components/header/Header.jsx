@@ -23,7 +23,7 @@ const Header = ({ toggleCart , setToggleCart }) => {
   }
 
   return (
-    <header className="fixed z-50 w-screen p-2 px-4 md:p-3 md:px-16 border-b-[1px] bg-white">
+    <header className="fixed z-50 w-full border  p-2 px-4 md:p-3 md:px-16 border-b-[1px] bg-white">
       {/* desktop & tablet */}
       <div className="hidden md:flex w-full h-full md:gap-2 lg:gap-0 items-center justify-between">
         <Link to={"/"} className="flex items-center gap-2">

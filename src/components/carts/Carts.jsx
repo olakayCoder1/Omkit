@@ -24,13 +24,9 @@ const Carts = ({ toggleCart , setToggleCart }) => {
         'email':'olakay@gmail.com'
       }
 
-
-
       function handleCart(){
         setToggleCart()
       }
-
-
 
   return (
     

@@ -24,7 +24,7 @@ function App() {
   return (
     <AnimatePresence exitBeforeEnter>
       <Router>
-      <div className="w-screen   text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 font-noto">
+      <div className="text-gray-700 flex flex-col bg-gray-300 font-noto">
       {/* <div className="w-screen   text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 font-noto"> */}
       {/* <div className="w-screen  h-full text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 bg-blend-overlay font-noto" style={{ backgroundImage : `url(${hero})`}}> */}
       <Header toggleCart={showCart} setToggleCart={handleCartShow} />
