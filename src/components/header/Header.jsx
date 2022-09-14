@@ -13,14 +13,16 @@ import {BiUser} from 'react-icons/bi'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-const Header = () => {
+const Header = ({ toggleCart , setToggleCart }) => {
 
 
 
   const [isMenu, setIsMenu] = useState(false);
 
 
-
+  function handleCart(){
+    setToggleCart()
+  }
 
   return (
     <header className="fixed z-50 w-screen p-2 px-4 md:p-3 md:px-16 border-b-[1px] bg-white">
@@ -61,6 +63,7 @@ const Header = () => {
           <div
             className="relative flex items-center justify-center"
             // onClick={showCart}
+            onClick={handleCart}
           >
             <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer" />
 
@@ -79,6 +82,7 @@ const Header = () => {
               className="w-12 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
               alt="userprofile"
               onClick={()=> setIsMenu(!isMenu)}
+              
             />
 
             {isMenu && (
@@ -128,7 +132,8 @@ const Header = () => {
       {/* mobile */}
       {/* mobile */}
       <div className="flex items-center justify-between md:hidden w-full h-full ">
-        <div className="relative flex items-center justify-center" >
+        <div onClick={handleCart}
+          className="relative flex items-center justify-center" >
           <MdShoppingBasket className="text-textColor text-2xl  cursor-pointer" />
             <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-red-600 flex items-center justify-center">
               <p className="text-xs text-white font-semibold">

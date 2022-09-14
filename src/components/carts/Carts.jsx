@@ -10,7 +10,7 @@ import CartItem from "./CartItem";
 
 
 
-const Carts = () => {
+const Carts = ({ toggleCart , setToggleCart }) => {
 
     const me = [1,2,3,4,5]
 //   const [{  user } , dispatch ] = useStateValue();
@@ -26,25 +26,34 @@ const Carts = () => {
 
 
 
+      function handleCart(){
+        setToggleCart()
+      }
 
 
 
   return (
     
+    
     <motion.div
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
+      transition={{ duration:2}}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed top-0 right-0 w-full md:w-[375px] h-screen bg-white drop-shadow-md flex flex-col z-[101]"
+      className={`${toggleCart ? "fixed duration-300" : "hidden "} top-0 right-0 w-full md:w-[375px] h-screen bg-white drop-shadow-md flex flex-col z-[101]`}
     >
       <div className="w-full flex items-center justify-between p-4 cursor-pointer">
-        <motion.div whileTap={{ scale: 0.75 }} onClick={()=> setShowCart(!showCart)}>
+        <motion.div whileTap={{ scale: 0.75 }}
+        //  onClick={()=> setShowCart(!showCart)}
+          onClick={handleCart}
+         >
           <MdOutlineKeyboardBackspace className="text-gray-700 text-3xl" />
         </motion.div>
         <p className="text-gray-700 text-lg font-merriweather font-semibold">Cart</p>
 
         <motion.p
           whileTap={{ scale: 0.75 }}
+          onClick={handleCart}
           className="flex items-center   gap-2 p-1 px-2 my-2 bg-gray-100 rounded-md hover:shadow-md  cursor-pointer text-gray-700 text-base"
         //   onClick={clearCart}
         >
@@ -65,6 +74,7 @@ const Carts = () => {
                   item={'kabby'}
                   setFlag={setFlag}
                   flag={flag}
+                  onClick={handleCart}
                 />
               ))}
           </div>

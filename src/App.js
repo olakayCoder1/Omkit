@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {BrowserRouter as Router , Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Header from './components/header/Header';
@@ -13,7 +13,12 @@ import Carts from "./components/carts/Carts";
 
 function App() {
 
-  
+
+  const [ showCart , setShowCart ] = useState(false)
+
+  function handleCartShow(){
+    setShowCart(!showCart)
+  }
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -21,14 +26,14 @@ function App() {
       <div className="w-screen   text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 font-noto">
       {/* <div className="w-screen   text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 font-noto"> */}
       {/* <div className="w-screen  h-full text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 bg-blend-overlay font-noto" style={{ backgroundImage : `url(${hero})`}}> */}
-      <Header />
+      <Header toggleCart={showCart} setToggleCart={handleCartShow} />
       <main className="mt-14 md:mt-20 px-3 md:px-16 py-4 w-full">
         <Routes>
           <Route path="" element={<HomePage />} />
           <Route path="/the" element={<AllProducts />} />
         </Routes>
       </main>
-      {/* <Carts /> */}
+      <Carts toggleCart={showCart} setToggleCart={handleCartShow}/>
       <Footer />
       </div>
       </Router>
