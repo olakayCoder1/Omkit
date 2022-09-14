@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {Component} from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -14,6 +14,8 @@ function ProductCategory() {
         slidesToShow: 5,
         slidesToScroll: 3,
         initialSlide: 0,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
         responsive: [
             {
               breakpoint: 1024,
@@ -39,7 +41,8 @@ function ProductCategory() {
                 slidesToScroll: 1
               }
             }
-        ]
+        ],
+        
       };
 
   return (
@@ -62,4 +65,35 @@ function ProductCategory() {
   )
 }
 
+
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, background: "#d1d5da", border:'1px solid #58616e', borderRadius:'50%', font:'3rem' ,width:'3rem', height:'3rem', display:'flex', alignItems:'center', placeItems:'center',placeContent:'center' }}
+        onClick={onClick}
+      />
+    );
+  }
+
+
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, background: "#d1d5da", border:'1px solid #58616e', borderRadius:'50%', font:'3rem' ,width:'3rem', height:'3rem', display:'flex', alignItems:'center', placeItems:'center',placeContent:'center', zIndex:'50' }}
+        onClick={onClick}
+      />
+    );
+}
+
+
+
+
 export default ProductCategory
+
+
+

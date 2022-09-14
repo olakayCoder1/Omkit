@@ -40,7 +40,7 @@ const Carts = ({ toggleCart , setToggleCart }) => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration:2}}
       exit={{ opacity: 0, x: 200 }}
-      className={`${toggleCart ? "fixed duration-300" : "hidden "} top-0 right-0 w-full md:w-[375px] h-screen bg-white drop-shadow-md flex flex-col z-[101]`}
+      className={`${toggleCart ? "fixed duration-300" : "hidden "} top-0 right-0 w-full md:w-[375px] h-screen bg-white drop-shadow-md flex flex-col z-[101] pb-20`}
     >
       <div className="w-full flex items-center justify-between p-4 cursor-pointer">
         <motion.div whileTap={{ scale: 0.75 }}
@@ -82,19 +82,19 @@ const Carts = ({ toggleCart , setToggleCart }) => {
           {/* cart total section */}
           <div className="w-full flex-1 bg-cartTotal rounded-t-[2rem] flex flex-col items-center justify-evenly px-8 py-2">
             <div className="w-full flex items-center justify-between">
-              <p className="text-gray-400 text-lg">Sub Total</p>
-              <p className="text-gray-400 text-lg">$ {890}</p>
+              <p className="text-gray-700 text-lg">Sub Total</p>
+              <p className="text-gray-700 text-lg">$ {890}</p>
             </div>
             <div className="w-full flex items-center justify-between">
-              <p className="text-gray-400 text-lg">Delivery</p>
-              <p className="text-gray-400 text-lg">$ 2.5</p>
+              <p className="text-gray-700 text-lg">Delivery</p>
+              <p className="text-gray-700 text-lg">$ 2.5</p>
             </div>
 
             <div className="w-full border-b border-gray-600 my-2"></div>
 
             <div className="w-full flex items-center justify-between">
-              <p className="text-gray-200 text-xl font-semibold">Total</p>
-              <p className="text-gray-200 text-xl font-semibold">
+              <p className="text-gray-700 text-xl font-semibold">Total</p>
+              <p className="text-gray-700 text-xl font-semibold">
                 ${355 + 2.5}
               </p>
             </div>

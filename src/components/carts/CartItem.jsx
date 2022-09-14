@@ -76,7 +76,7 @@ const CartItem = ({ item, setFlag, flag }) => {
         <motion.div
           whileTap={{ scale: 0.75 }}
         >
-          <BiMinus className="text-gray-700 " />
+          <BiMinus className="text-gray-50 " />
         </motion.div>
 
         <p className="w-5 h-5 rounded-sm bg-cartBg text-gray-50 flex items-center justify-center">

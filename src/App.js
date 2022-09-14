@@ -9,6 +9,7 @@ import hero from './assets/heroBg.png'
 import Footer from "./components/Footer";
 import AllProducts from "./pages/AllProducts";
 import Carts from "./components/carts/Carts";
+import ProductDetail from "./components/products/ProductDetail";
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
       <main className="mt-14 md:mt-20 px-3 md:px-16 py-4 w-full">
         <Routes>
           <Route path="" element={<HomePage />} />
-          <Route path="/the" element={<AllProducts />} />
+          <Route path="/products" element={<AllProducts />} />
+          <Route path="/detail" element={<ProductDetail />} />
         </Routes>
       </main>
       <Carts toggleCart={showCart} setToggleCart={handleCartShow}/>

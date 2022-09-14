@@ -13,7 +13,7 @@ const ProductCard = () => {
   const [post, setPost] = useState(true);
 
   return (
-    <div className="m-2 w-48 border p-2 rounded-lg">
+    <div className="m-2  border p-2 rounded-lg bg-white">
       <div
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
