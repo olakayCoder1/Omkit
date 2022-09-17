@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import AllProducts from "./pages/AllProducts";
 import Carts from "./components/carts/Carts";
 import ProductDetail from "./components/products/ProductDetail";
+import AuthContextProvider from "./contexts/ContextProvider";
 
 
 function App() {
@@ -23,22 +24,25 @@ function App() {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Router>
-      <div className="text-gray-700 flex flex-col bg-gray-300 font-noto">
-      {/* <div className="w-screen   text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 font-noto"> */}
-      {/* <div className="w-screen  h-full text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 bg-blend-overlay font-noto" style={{ backgroundImage : `url(${hero})`}}> */}
-      <Header toggleCart={showCart} setToggleCart={handleCartShow} />
-      <main className="mt-14 md:mt-20 px-3 md:px-16 py-4 w-full">
-        <Routes>
-          <Route path="" element={<HomePage />} />
-          <Route path="/products" element={<AllProducts />} />
-          <Route path="/detail" element={<ProductDetail />} />
-        </Routes>
-      </main>
-      <Carts toggleCart={showCart} setToggleCart={handleCartShow}/>
-      <Footer />
-      </div>
-      </Router>
+      <AuthContextProvider >
+        <Router>
+        <div className="text-gray-700 flex flex-col bg-gray-300 font-noto">
+        {/* <div className="w-screen   text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 font-noto"> */}
+        {/* <div className="w-screen  h-full text-gray-700  bg-center bg-cover bg-no-repeat flex flex-col bg-gray-300 bg-blend-overlay font-noto" style={{ backgroundImage : `url(${hero})`}}> */}
+        <Header toggleCart={showCart} setToggleCart={handleCartShow} />
+        <main className="mt-14 md:mt-20 px-3 md:px-16 py-4 w-full">
+          <Routes>
+            <Route path="" element={<HomePage />} />
+            <Route path="/products" element={<AllProducts />} />
+            <Route path="/detail" element={<ProductDetail />} />
+          </Routes>
+        </main>
+        <Carts toggleCart={showCart} setToggleCart={handleCartShow}/>
+        <Footer />
+        </div>
+        </Router>
+      </AuthContextProvider>
+ 
     </AnimatePresence>
   );
 }

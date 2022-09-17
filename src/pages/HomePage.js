@@ -25,6 +25,7 @@ function Method({title,Icon ,description}){
 }
 
 function HomePage() {
+  
   return (
     <div className='w-full ' >
       <Intro />

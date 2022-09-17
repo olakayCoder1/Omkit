@@ -1,9 +1,9 @@
-import React from 'react'
-import TopProduct from './TopProduct'
+import React, { useEffect, useState } from 'react'
 import image4 from '../../assets/image4.jpeg'
 import {TbCurrencyNaira} from 'react-icons/tb'
 import ProductCard from './ProductCard'
-
+import { fetchProducts } from '../../contexts/utils/functions.js'
+import axios from "axios";
 
 const productSlides = [
     {
@@ -31,12 +31,36 @@ const productSlides = [
 
 
 function TopRanking() {
+
+        const [ topRankingProducts, setTopRankingProducts ] = useState([])
+
+        useEffect(()=>{
+
+            axios.get('https://api.escuelajs.co/api/v1/products')
+            .then( res =>{
+                console.log(res.data[0])
+                return setTopRankingProducts(res.data)
+            })
+            .catch( err => {
+                return []
+            })
+    },[])
   return (
     <div className=' w-full h-full bg-white my-12 rounded-lg px-2 md:px-6 lg:p-12'>
         <div className=' w-full flex items-center place-content-center text-center py-12'>
             <h2 className='w-fit text-center text-xl font-bold font-headingFont  hover:underline hover:underline-offset-1 hover:text-omkit'>Featured collection</h2>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 '>
+            {topRankingProducts  && topRankingProducts.map((item)=>{
+                    return (
+                        <ProductCard key={item.id} name={item.title} price={item.price} />
+                    )
+                })
+            }
+            <ProductCard />
+
+            {topRankingProducts && <h1>olaka</h1>}
+            {/* <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -49,19 +73,8 @@ function TopRanking() {
             <ProductCard />
             <ProductCard />
             <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            {/* <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct />
-            <TopProduct /> */}
+            <ProductCard /> */}
+            
         </div>
     </div>
   )

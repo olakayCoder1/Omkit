@@ -6,7 +6,7 @@ import image26 from '../../assets/image26.jpeg'
 
 // import { client, urlFor } from '../client';
 
-const ProductCard = () => {
+const ProductCard = ({name , price , id }) => {
 
   const [postHovered, setPostHovered] = useState(false);
   const [savingPost, setSavingPost] = useState(false);
@@ -56,12 +56,12 @@ const ProductCard = () => {
           </div>
         )}
       </div>
-      <a to={`#`} className="flex flex-col gap-[2px] mt-2 items-center">
-        <p className="font-medium text-sm capitalize font-headingFont">postedBy?.userName</p>
+      <a to={`#`} className="flex flex-col gap-[2px] mt-2 items-center overflow-hidden">
+        <p className="font-medium text-sm capitalize font-headingFont text-ellipsis overflow-hidden">{name}</p>
         <div className=' flex gap-2'>
             <p className='flex items-center font-medium text-lg'>
                 <TbCurrencyNaira />
-                <span>4060</span>
+                <span>{price}</span>
             </p>
             <p className='flex items-center text-xs text-gray-400 text-semibold line-through'>
                 <TbCurrencyNaira />

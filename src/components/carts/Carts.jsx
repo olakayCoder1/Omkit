@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { RiRefreshFill } from "react-icons/ri";
-import { useStateValue } from "../../context/StateProvider";
-import { actionType } from "../../context/reducer";
 import { motion } from "framer-motion";
 import EmptyCart from "../../assets/emptyCart.svg";
 import CartItem from "./CartItem";
